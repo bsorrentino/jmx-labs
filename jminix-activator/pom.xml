@@ -21,7 +21,6 @@
 <dependency>
         <groupId>com.googlecode.pojosr</groupId>
         <artifactId>de.kalpatec.pojosr.framework</artifactId>
-        <version>0.1.9-SNAPSHOT</version>
         <scope>provided</scope>
 </dependency>
 
@@ -57,6 +56,33 @@
           </instructions>
         </configuration>
       </plugin>
+      
+<!-- 
+======================================================
+COPY DEPENDENCIES
+dependency:copy-dependencies
+======================================================
+ -->
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+        <executions>
+            <execution>
+                <id>copy-dependencies</id>
+                <goals>
+                    <goal>copy-dependencies</goal>
+                </goals>
+                <phase>package</phase>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/bundle</outputDirectory>
+                    <excludeScope>provided</excludeScope>
+                </configuration>
+            </execution>
+            
+        </executions>
+</plugin>
+      
 </plugins>
 </build>
 </project>

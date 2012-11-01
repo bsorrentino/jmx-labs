@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.bsc</groupId>
+    <artifactId>jminix-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>jminix-activator</artifactId>
+  <name>OSGI JMinix bundle activator</name>
+
+  <packaging>bundle</packaging>
+  
+<dependencies>
+    
+<dependency>
+        <groupId>org.jminix</groupId>
+        <artifactId>jminix</artifactId>
+        <version>1.0.0</version>
+</dependency>
+
+<dependency>
+        <groupId>com.googlecode.pojosr</groupId>
+        <artifactId>de.kalpatec.pojosr.framework</artifactId>
+        <version>0.1.9-SNAPSHOT</version>
+        <scope>provided</scope>
+</dependency>
+
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+</dependencies>  
+
+<build>
+
+<plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.3.4</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>org.bsc.jminix</Bundle-SymbolicName>
+            <Bundle-Name>jminix bundle</Bundle-Name>
+            <Bundle-Vendor>BSC</Bundle-Vendor>
+            <Import-Package>!*</Import-Package>
+            <Bundle-Activator>org.bsc.jminix.JMinixActivator</Bundle-Activator>
+            <Export-Service>javax.servlet.http.HttpServlet</Export-Service>
+            <!-- 
+            <Include-Resource>META-INF/LICENSE=LICENSE,META-INF/NOTICE=NOTICE,META-INF/DEPENDENCIES=DEPENDENCIES,{src/main/resources/}</Include-Resource> 
+            <Private-Package>org.osgi.framework.*, org.osgi.service.url, org.osgi.service.packageadmin, org.osgi.service.startlevel, org.osgi.util.tracker, de.kalpatec.pojosr.framework.*</Private-Package>
+            <Main-Class>de.kalpatec.pojosr.framework.PojoSR</Main-Class>
+             -->
+          </instructions>
+        </configuration>
+      </plugin>
+</plugins>
+</build>
+</project>

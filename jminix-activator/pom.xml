@@ -56,13 +56,38 @@
           </instructions>
         </configuration>
       </plugin>
+<!-- 
+======================================================
+ASSEMBLY
+
+======================================================
+ -->
+      
+		<plugin>
+		  <artifactId>maven-assembly-plugin</artifactId>
+		  <version>2.3</version>
+		  <configuration>
+		    <descriptors>
+		      <descriptor>src/main/assembly/assembly.xml</descriptor>
+		    </descriptors>
+		  </configuration>
+		  <executions>
+		  	<execution>
+		  		<id>packaging</id>
+		  		<phase>package</phase>
+		  		<goals>
+		  			<goal>single</goal>
+		  		</goals>
+		  	</execution>
+		  </executions>
+		</plugin>	
       
 <!-- 
 ======================================================
 COPY DEPENDENCIES
 dependency:copy-dependencies
 ======================================================
- -->
+
 <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -82,7 +107,8 @@ dependency:copy-dependencies
             
         </executions>
 </plugin>
-      
+ -->
+       
 </plugins>
 </build>
 </project>

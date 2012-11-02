@@ -63,19 +63,20 @@ COPY DEPENDENCY TO BUNDLE
             <execution>
                 <id>copy-activator</id>
                 <goals>
-                    <goal>copy</goal>
+                    <goal>unpack</goal>
                 </goals>
-                <phase>generate-resources</phase>
+                <phase>process-resources</phase>
                 <configuration>
 	              <artifactItems>
 	                <artifactItem>
 	                  <groupId>${project.groupId}</groupId>
 	                  <artifactId>jminix-activator</artifactId>
 	                  <version>${project.version}</version>
-	                  <type>jar</type>
+	                  <classifier>bundle</classifier>
+	                  <type>zip</type>
 	                  <overWrite>false</overWrite>
-	                  <outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/bundle</outputDirectory>
-	                  <destFileName>jminix-activator.jar</destFileName>
+	                  <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/bundle</outputDirectory>
+	                  <!--  destFileName>jminix-activator.jar</destFileName-->
 	                </artifactItem>
 	              </artifactItems>
                   <outputDirectory></outputDirectory>

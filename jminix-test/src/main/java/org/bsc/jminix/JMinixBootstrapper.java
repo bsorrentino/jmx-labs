@@ -78,9 +78,9 @@ public class JMinixBootstrapper implements ServletContextListener {
 			}
 			URLClassLoader cl = new URLClassLoader( urls, getClass().getClassLoader() );
 			
-			ClasspathScanner cps = new ClasspathScanner(cl);
+			ClasspathScanner cps = new ClasspathScanner();
 			
-			java.util.List<BundleDescriptor> bundles = cps.scanForBundles();
+			java.util.List<BundleDescriptor> bundles = cps.scanForBundles(cl);
 			
 			for( BundleDescriptor bd : bundles ) {
 				

@@ -7,8 +7,11 @@
   <packaging>pom</packaging>
 
 <properties>
-      
+
+<!--     
 <pojosr.version>0.3.0-SNAPSHOT</pojosr.version>  
+-->
+<pojosr.version>0.2.1</pojosr.version>  
     
 </properties>
 

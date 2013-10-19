@@ -1,12 +1,10 @@
-JMX-LABS
-========
+## JMX-LABS
 
 JMX laboratory 
 
-Projects
-============
+## PROJECT(s)
 
-# JMINIX
+## JMINIX
 
-> Embedded JMINIX console within application as OSGI bundle, using POJOSR a lightweight OSGI framework.
+> Embedded <a href="https://code.google.com/p/jminix/">JMINIX</a> ( a JMX console ) within application as OSGI bundle using <a href="https://code.google.com/p/pojosr/">PojoSR</a> ( a lightweight OSGI framework).
 

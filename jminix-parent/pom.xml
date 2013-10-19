@@ -9,9 +9,9 @@
 <properties>
 
 <!--     
-<pojosr.version>0.3.0-SNAPSHOT</pojosr.version>  
--->
 <pojosr.version>0.2.1</pojosr.version>  
+-->
+<pojosr.version>0.3.0-SNAPSHOT</pojosr.version>  
     
 </properties>
 
@@ -21,7 +21,12 @@
 	        <groupId>com.googlecode.pojosr</groupId>
 	        <artifactId>de.kalpatec.pojosr.framework</artifactId>
 	        <version>${pojosr.version}</version>
-		</dependency>        
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
     </dependencies>
     
 </dependencyManagement>  
